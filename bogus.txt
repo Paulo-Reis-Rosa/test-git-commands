@@ -1,1 +1,5 @@
-This is a changed bogus file
+// MOD begin
+// This is a changed bogus file
+// MOD ---
+This is a modified bogus file
+// MOD end
