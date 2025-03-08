@@ -1,1 +1,10 @@
-This is a changed bogus file
+// MOD begin
+// This is a changed bogus file
+// MOD ---
+reportWhatIam() 
+// MOD end
+// ADD begin
+function reportWhatIam() {
+    return "This is a changed bogus file";
+}
+// ADD end
