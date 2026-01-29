@@ -208,7 +208,7 @@ graph TD
 	end;
 
 	w-->se;
-	w-->b1;
+	w-->bs;
 
 	se-->bs;
 	t1-->b1;
