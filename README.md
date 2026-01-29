@@ -189,7 +189,7 @@ This diagram depicts the role and importance of both the *Task Output* and the *
 
 ```mermaid
 	graph TD
-		classDef subgraph1 &nbsp; TD;
+		%% subgraph1  ;
 			pf[Process flow] ~~~ se & i1;
 			se((Start<br>Event))-->|output|t1[Task 1];
 			t1-->|output 1|t2[more tasks ...];
@@ -197,7 +197,7 @@ This diagram depicts the role and importance of both the *Task Output* and the *
 			d1-->|output N|t3[more tasks ...];
 			t3-->|output ...|ed((End<br>Event));
 			i1[(Interface Data)]
-		classDef end1
+		%% end
 		i1<-.->t1;
 		i1<-.->t2;
 		i1<-.->t3;
