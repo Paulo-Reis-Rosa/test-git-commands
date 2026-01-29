@@ -188,39 +188,20 @@ The *Set Interface Data* task, receives input from the previous task's output an
 This diagram depicts the role and importance of both the *Task Output* and the *Interface Data*.
 
 ```mermaid
-graph TD
-	w[Process flow];
-
-	subgraph  ;
-		se((Start<br>Event))-->|output|t1[Task 1];
-		t1-->|output 1|t2[more tasks ...];
-		t2-->|output N|d1{Decision 1};
-		d1-->|output N|t3[more tasks ...];
-		t3-->|output ...|ed((End<br>Event));
-	end
-
-	subgraph  ;
-		bs --> b1;
-		b1 --> b2;
-		b2 --> i1[(Interface Data)];
-		i1 --> b3;
-		b3 --> be;
-	end;
-
-	w-->se;
-	w-->bs;
-
-	se-->bs;
-	t1-->b1;
-	t2-->i1;
-	d1-->b2;
-	t3-->b3;
-	ed-->be;
-
-	i1<-.->t1;
-	i1<-.->t2;
-	i1<-.->t3;
-	i1<-.->d1;
+	graph TD
+		pf[Process flow] f1@--> se & i1;
+		subgraph  ;
+			se((Start<br>Event))-->|output|t1[Task 1];
+			t1-->|output 1|t2[more tasks ...];
+			t2-->|output N|d1{Decision 1};
+			d1-->|output N|t3[more tasks ...];
+			t3-->|output ...|ed((End<br>Event));
+			i1[(Interface Data)]
+		end
+		i1<-.->t1;
+		i1<-.->t2;
+		i1<-.->t3;
+		i1<-.->d1;
 ```
 
 ```mermaid
