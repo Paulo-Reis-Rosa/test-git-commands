@@ -200,17 +200,22 @@ graph TD
 	end
 
 	subgraph  ;
-		i1[(Interface Data)]
+		bs --> b1;
 		b1 --> b2;
-		b2 --> i1;
+		b2 --> i1[(Interface Data)];
 		i1 --> b3;
-		b3 --> b4;
+		b3 --> be;
 	end;
 
 	w-->se;
 	w-->b1;
 
-	se-->b1
+	se-->bs;
+	t1-->b1;
+	t2-->i1;
+	d1-->b2;
+	t3-->b3;
+	ed-->be;
 
 	i1<-.->t1;
 	i1<-.->t2;
