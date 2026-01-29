@@ -189,20 +189,23 @@ This diagram depicts the role and importance of both the *Task Output* and the *
 
 ```mermaid
 graph TD
-		i1[(Interface Data)]
+	subgraph  ;
 		se((Start<br>Event))-->|output|t1[Task 1];
 		t1-->|output 1|t2[more tasks ...];
 		t2-->|output N|d1{Decision 1};
 		d1-->|output N|t3[more tasks ...];
 		t3-->|output ...|ed((End<br>Event));
+	end
 
+	subgraph  ;
+		i1[(Interface Data)]
 		b1 --> b2;
 		b2 --> i1;
 		i1 --> b3;
 		b3 --> b4;
+	end;
 
 		i1<-.->t1;
-		t1-.->i1;
 		i1-.->t2;
 		t2-.->i1;
 		i1-.->t3;
