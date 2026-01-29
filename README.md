@@ -189,8 +189,8 @@ This diagram depicts the role and importance of both the *Task Output* and the *
 
 ```mermaid
 	graph TD
-		pf[Process flow] f1@--> se & i1;
 		subgraph  ;
+			pf[Process flow] ~~~ se & i1;
 			se((Start<br>Event))-->|output|t1[Task 1];
 			t1-->|output 1|t2[more tasks ...];
 			t2-->|output N|d1{Decision 1};
