@@ -188,25 +188,19 @@ The *Set Interface Data* task, receives input from the previous task's output an
 This diagram depicts the role and importance of both the *Task Output* and the *Interface Data*.
 
 ```mermaid
-	graph TD
-		%% subgraph1  ;
-			pf[Process flow] ~~~ se & i1;
-			se((Start<br>Event))-->|output|t1[Task 1];
-			t1-->|output 1|t2[more tasks ...];
-			t2-->|output N|d1{Decision 1};
-			d1-->|output N|t3[more tasks ...];
-			t3-->|output ...|ed((End<br>Event));
-			i1[(Interface Data)]
-		%% end
+	graph LR;
+		pf[Process flow] ~~~ se & i1;
+		se((Start<br>Event))-->|output|t1[Task 1];
+		t1-->|output 1|t2[more tasks ...];
+		t2-->|output N|d1{Decision 1};
+		d1-->|output N|t3[more tasks ...];
+		t3-->|output ...|ed((End<br>Event));
+		i1[(Interface Data)]
+
 		i1<-.->t1;
 		i1<-.->t2;
 		i1<-.->t3;
 		i1<-.->d1;
 ```
 
-```mermaid
-flowchart LR
-  A e1@--> B
-  classDef animate stroke-dasharray: 9,5,stroke-dashoffset: 900,animation: dash 25s linear infinite;
-  class e1 animate
-```
+The output of one task is directly accessible by the next, and *Decision* tasks relay the output to the next direct task (on the selected flow). The `Interface Data` is accessible globaly.
